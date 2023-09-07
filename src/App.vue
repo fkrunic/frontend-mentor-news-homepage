@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
 import Mobile from './components/Mobile.vue'
+import Desktop from './components/Desktop.vue'
 
 const bodyClasses = 'font-inter bg-off-white'
 
@@ -20,4 +21,5 @@ const watchLock = (lockStatus: boolean) => {
 
 <template>
   <Mobile class="desktop:hidden" @lock-status="watchLock"></Mobile>
+  <Desktop class="hidden desktop:flex"></Desktop>
 </template>
