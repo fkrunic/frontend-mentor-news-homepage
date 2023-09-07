@@ -11,15 +11,18 @@ export const content = {
   news: [
     {
       title: 'Hydrogen VS Electric Cars',
-      description: 'Will hydrogen-fueled cars every catch up to EVs?'
+      description: 'Will hydrogen-fueled cars every catch up to EVs?',
+      border: true
     },
     {
       title: 'The Downsides of AI Artistry',
-      description: 'What are the possible adverse effects of on-demand AI image generation?'
+      description: 'What are the possible adverse effects of on-demand AI image generation?',
+      border: true
     },
     {
       title: 'Is VC Funding Drying Up?',
-      description: 'Prive funding by VC firms is down 50% YOY. We take a look at what that means.'
+      description: 'Prive funding by VC firms is down 50% YOY. We take a look at what that means.',
+      border: false
     }
   ],
   bottom: [
