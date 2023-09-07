@@ -1,17 +1,40 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import { content } from '../content'
 import ReadMore from './ReadMore.vue'
 
 const assetURL = (file: string): string => {
   return new URL(`../assets/${file}`, import.meta.url).href
 }
+
+const showMenu = ref(false)
+
+const toggleMenu = () => {
+  showMenu.value = !showMenu.value
+}
+
 </script>
 
 <template>
-  <div class="relative flex flex-col items-center justify-center">
+  <div class="relative flex flex-col items-end justify-center">
 
     <!-- Backdrop -->
-    <div class="absolute w-full h-full bg-very-dark-blue opacity-30"></div>
+    <div 
+      class="absolute w-full h-full bg-very-dark-blue opacity-30"
+      :class="showMenu ? '' : 'hidden'"></div>
+
+    <!-- Active Menu -->
+    <div 
+      class="absolute flex flex-col h-full w-3/4 bg-off-white"
+      :class="showMenu ? '' : 'hidden'"
+      >
+      <div class="flex flex-row justify-end p-7">
+        <img :src="assetURL('icon-menu-close.svg')" @click="toggleMenu">
+      </div>
+      <div class="flex flex-col gap-2 mt-12">
+        <p class="p-2 pl-6 text-lg" v-for="page of content.pages"> {{ page }}</p>
+      </div>
+    </div>
 
     <!-- Default Page -->
     <div class="flex flex-col items-center justify-start gap-4 min-h-screen m-4">
@@ -19,7 +42,7 @@ const assetURL = (file: string): string => {
       <!-- Menu -->
       <div class="flex flex-row items-center justify-between w-full py-4">
         <img class="w-12" :src="assetURL('logo.svg')" alt="logo">
-        <img :src="assetURL('icon-menu.svg')" alt="menu">
+        <img :src="assetURL('icon-menu.svg')" alt="menu" @click="toggleMenu">
       </div>
 
       <!-- Headline -->

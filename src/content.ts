@@ -1,4 +1,5 @@
 export const content = {
+  pages: ['Home', 'New', 'Popular', 'Trending', 'Categories'],
   headline: {
     title: 'The Bright Future of Web 3.0?',
     description: [
