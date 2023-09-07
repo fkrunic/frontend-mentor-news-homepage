@@ -2,11 +2,22 @@
 import { onMounted } from 'vue';
 import Mobile from './components/Mobile.vue'
 
+const bodyClasses = 'font-inter bg-off-white'
+
 onMounted(() => {
-  document.body.className = 'font-inter bg-off-white'
+  document.body.className = bodyClasses
 })
+
+const watchLock = (lockStatus: boolean) => {
+  if (lockStatus) {
+    document.body.className = bodyClasses + ' overflow-hidden'
+  } else {
+    document.body.className = bodyClasses
+  }
+}
+
 </script>
 
 <template>
-  <Mobile class="desktop:hidden"></Mobile>
+  <Mobile class="desktop:hidden" @lock-status="watchLock"></Mobile>
 </template>

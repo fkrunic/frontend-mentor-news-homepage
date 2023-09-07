@@ -7,10 +7,15 @@ const assetURL = (file: string): string => {
   return new URL(`../assets/${file}`, import.meta.url).href
 }
 
+const emit = defineEmits<{
+  lockStatus: [status:boolean]
+}>()
+
 const showMenu = ref(false)
 
 const toggleMenu = () => {
   showMenu.value = !showMenu.value
+  emit('lockStatus', showMenu.value)
 }
 
 </script>
