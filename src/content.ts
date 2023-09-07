@@ -22,7 +22,7 @@ export const content = {
     },
     {
       title: 'Is VC Funding Drying Up?',
-      description: 'Prive funding by VC firms is down 50% YOY. We take a look at what that means.',
+      description: 'Private funding by VC firms is down 50% YOY. We take a look at what that means.',
       border: false
     }
   ],
