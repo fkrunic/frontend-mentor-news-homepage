@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
+import Mobile from './components/Mobile.vue'
 
 onMounted(() => {
   document.body.className = 'font-inter bg-off-white'
@@ -7,7 +8,5 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col justify-center items-center min-h-screen">
-    <p class="text-3xl font-bold underline">Hello world!</p>
-  </div>
+  <Mobile class="desktop:hidden"></Mobile>
 </template>
