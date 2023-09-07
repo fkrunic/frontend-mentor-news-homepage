@@ -1,4 +1,4 @@
-const content = {
+export const content = {
   headline: {
     title: 'The Bright Future of Web 3.0?',
     description: [
