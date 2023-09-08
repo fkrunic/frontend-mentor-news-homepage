@@ -18,7 +18,7 @@ const toggleMenu = () => {
 </script>
 
 <template>
-  <div class="relative flex flex-col items-end justify-center">
+  <div class="relative flex flex-col items-end justify-center mb-10">
 
     <!-- Backdrop -->
     <div 
