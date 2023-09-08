@@ -34,7 +34,7 @@ export const content = {
     },
     {
       title: 'Top 10 Laptops of 2022',
-      description: 'Our best picks for various needs and budgets',
+      description: 'Our best picks for various needs and budgets.',
       picture: 'image-top-laptops.jpg'
     },
     {

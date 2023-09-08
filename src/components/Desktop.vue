@@ -11,7 +11,7 @@ import { assetURL } from './common';
     <div class="flex flex-row w-full items-center justify-between">
       <img :src="assetURL('logo.svg')">
       <div class="flex flex-row gap-8 text-dark-grayish-blue">
-        <p v-for="page of content.pages">{{ page }}</p>
+        <p class="hover:text-soft-orange hover:cursor-pointer" v-for="page of content.pages">{{ page }}</p>
       </div>
     </div>
 
@@ -22,11 +22,11 @@ import { assetURL } from './common';
       <div class="flex flex-col gap-8">
         <img :src="assetURL('image-web-3-desktop.jpg')">
         <div class="flex flex-row gap-20">
-          <p class="text-[55px] leading-[55px] font-bold">{{ content.headline.title }}</p>
+          <p class="text-[54px] leading-[55px] font-bold">{{ content.headline.title }}</p>
           <div class="flex flex-col gap-8">
-            <p class="p-2 text-sm leading-6 text-dark-grayish-blue">{{ content.headline.description }}</p>
+            <p class="p-2 pl-6 text-sm leading-6 text-dark-grayish-blue">{{ content.headline.description }}</p>
             <!-- Button -->
-            <ReadMore class="w-[12rem]"></ReadMore>
+            <ReadMore class="ml-6 w-[12rem]"></ReadMore>
           </div>
         </div>
       </div>
@@ -39,20 +39,20 @@ import { assetURL } from './common';
           :class="n.border ? 'border-b-grayish-blue' : ''"
           v-for="n of content.news"                     
           >
-          <p class="text-off-white font-bold text-lg">{{ n.title }}</p>
+          <p class="text-off-white font-bold text-lg hover:text-soft-orange hover:cursor-pointer">{{ n.title }}</p>
           <p class="text-grayish-blue/80 text-sm">{{ n.description }}</p>
         </div>
       </div>
     </div>
 
     <!-- Bottom Articles -->
-    <div class="flex flex-row">
-      <div class="flex flex-row" v-for="(article, index) in content.bottom" :key="index">
-        <img :src="assetURL(article.picture)">
-        <div class="flex flex-col">
-          <p>0{{ index + 1 }}</p>
-          <p>{{ article.title }}</p>
-          <p>{{ article.description }}</p>
+    <div class="flex flex-row gap-12 -ml-5">
+      <div class="flex flex-row gap-6" v-for="(article, index) in content.bottom" :key="index">
+        <img class="h-32" :src="assetURL(article.picture)">
+        <div class="flex flex-col w-52 gap-2">
+          <p class="text-3xl font-bold text-grayish-blue">0{{ index + 1 }}</p>
+          <p class="text-lg font-bold hover:text-soft-red hover:cursor-pointer">{{ article.title }}</p>
+          <p class="text-sm text-dark-grayish-blue">{{ article.description }}</p>
         </div>
       </div>
     </div>
